@@ -1,19 +1,13 @@
 class Solution434 {
     public int countSegments(String s) {
-        int count = 0;
         if(s.length()==0) return 0;
-        else{
-            
-        for(int i = 0;i<s.length();i++){
-        char ch = s.charAt(i);
-        if(ch == ' '){
-            count++;
+        String s1 = s.trim().replaceAll("\\s+"," ");
+        String [] s2 = s1.split(" ");
+        int count =0;
+        for(String t:s2){
+            //System.out.println("string is "+t);
+            if(t.trim().length()!=0) count++;
         }
-        }
-        if(count>0){
-        return count+1;
-        }
-        else return 1;
-        }
+         return count; 
     }
 }
