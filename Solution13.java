@@ -13,14 +13,19 @@ class Solution13 {
     }
     public int romanToInt(String s) {
         int result = 0;
-        for(int i = 0,j=i+1;i<s.length() && j<i;i++,j++){
+        for(int i = 0;i<s.length();i++){
             int s1 = value(s.charAt(i));
-            int s2 = value(s.charAt(j));
+            if(i+1<s.length()){
+              int s2 = value(s.charAt(i+1));
             if(s1>=s2){
                 result += s1;
             }
             else{
                 result += s2-s1;
+            }  
+            }
+            else{
+                result = result+s1;
             }
         }
         
