@@ -22,6 +22,7 @@ class Solution13 {
             }
             else{
                 result += s2-s1;
+                i++;
             }  
             }
             else{
